@@ -16,6 +16,7 @@ class LiensType extends AbstractType
             ->add('description')
             ->add('createdAt')
             ->add('url')
+            ->add('resume')
         ;
     }
 

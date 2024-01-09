@@ -26,6 +26,9 @@ class Liens
     #[ORM\Column(length: 255)]
     private ?string $url = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $resume = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -80,6 +83,18 @@ class Liens
     public function setUrl(string $url): static
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): static
+    {
+        $this->resume = $resume;
 
         return $this;
     }
