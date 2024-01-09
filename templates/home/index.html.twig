@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liens index
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="css/pico.min.css">
+	<h1>Home</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Titre</th>
+				<th>resume</th>
+				<th>CreatedAt</th>
+				<th>Url</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for lien in liens %}
+				<tr>
+					<td>{{ lien.titre }}</td>
+					<td>{{ lien.resume }}</td>
+					<td>{{ lien.createdAt ? lien.createdAt|date('d/m/Y H:i:s','Europe/paris') : '' }}</td>
+					<td>
+						<a href="{{ lien.url }}">{{ lien.url }}</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="7">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
