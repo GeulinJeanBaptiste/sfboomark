@@ -25,7 +25,7 @@
 					<td>{{ lien.titre }}</td>
 					<td>{{ lien.description }}</td>
 					<td>{{ lien.resume }}</td>
-					<td>{{ lien.createdAt ? lien.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+					<td>{{ lien.createdAt ? lien.createdAt|date('d/m/Y H:i:s','Europe/paris') : '' }}</td>
 					<td>
 						<a href="{{ lien.url }}">{{ lien.url }}</a>
 					</td>

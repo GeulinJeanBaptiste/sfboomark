@@ -4,8 +4,11 @@ namespace App\Form;
 
 use App\Entity\Liens;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+date_default_timezone_set('UTC');
 
 class LiensType extends AbstractType
 {
@@ -16,8 +19,7 @@ class LiensType extends AbstractType
             ->add('description')
             ->add('createdAt')
             ->add('url')
-            ->add('resume')
-        ;
+            ->add('resume');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
