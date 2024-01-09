@@ -15,7 +15,6 @@ class LiensType extends AbstractType
             ->add('titre')
             ->add('description')
             ->add('createdAt')
-            ->add('modifiedAt')
             ->add('url')
         ;
     }

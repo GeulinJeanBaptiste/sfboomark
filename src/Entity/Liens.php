@@ -23,11 +23,13 @@ class Liens
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $createdAt = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE,nullable:true)]
-    private ?\DateTimeInterface $modifiedAt = null;
-
     #[ORM\Column(length: 255)]
     private ?string $url = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -66,18 +68,6 @@ class Liens
     public function setCreatedAt(\DateTimeInterface $createdAt): static
     {
         $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getModifiedAt(): ?\DateTimeInterface
-    {
-        return $this->modifiedAt;
-    }
-
-    public function setModifiedAt(\DateTimeInterface $modifiedAt): static
-    {
-        $this->modifiedAt = $modifiedAt;
 
         return $this;
     }

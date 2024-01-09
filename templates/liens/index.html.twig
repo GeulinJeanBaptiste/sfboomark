@@ -12,7 +12,6 @@
                 <th>Titre</th>
                 <th>Description</th>
                 <th>CreatedAt</th>
-                <th>ModifiedAt</th>
                 <th>Url</th>
                 <th>actions</th>
             </tr>
@@ -24,7 +23,6 @@
                 <td>{{ lien.titre }}</td>
                 <td>{{ lien.description }}</td>
                 <td>{{ lien.createdAt ? lien.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ lien.modifiedAt ? lien.modifiedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td> <a href="{{ lien.url }}">{{ lien.url }}</a></td>
                 <td>
                     <a href="{{ path('app_liens_show', {'id': lien.id}) }}">show</a>
